@@ -69,11 +69,12 @@ const generateCard = (data) => {
   });
 
   pokemonCard.style.background = `
-  radial-gradient(
-    circle at 50% 0%,
-    ${themeColor} 36%,
-    var(--white-color) 36%
-`;
+    radial-gradient(
+        circle at 50% 0%,
+        ${themeColor} 36%,
+        var(--white-color) 36%
+    `;
+  pokemonCard.style.setProperty("--primary-color", themeColor);
 };
 
 const init = () => {

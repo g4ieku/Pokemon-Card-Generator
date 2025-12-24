@@ -52,10 +52,35 @@ body {
   }
 }
 
+/* Video background */
+.video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.78);
+}
+
 .container {
   max-width: 1150px;
   min-height: 100vh;
   margin: 0px auto;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -147,5 +172,55 @@ body {
     p {
       color: var(--dark-color);
     }
+  }
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.card::after,
+.card::before {
+  --angle: 0deg;
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  /* background: red; */
+  background-image: conic-gradient(
+    from var(--angle),
+    var(--primary-color),
+    var(--blue-color)
+  );
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  border-radius: 1rem;
+  padding: 0.35rem;
+  animation: 16s spin linear infinite;
+}
+
+.card::before {
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+
+/* Animations */
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .video-bg {
+    display: none;
   }
 }
