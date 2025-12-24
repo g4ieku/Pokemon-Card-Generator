@@ -132,6 +132,7 @@ body {
 
     span {
       background: var(--light-color);
+      font-weight: var(--font-semi-bold);
       padding: 0.25rem 0.5rem;
     }
   }
