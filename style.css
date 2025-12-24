@@ -1,16 +1,30 @@
 /* Variables */
 :root {
   /* Colors */
-  --first-color: #91c6bc;
-  --title-color: #4b9da9;
-  --txt-color: #000;
-  --body-color: #ebd5ab;
-  --container-color: #f6f3c2;
+  --primary-color: #5a7acd;
+  --dark-color: #2b2a2a;
+  --bg-color: #f5f2f2;
+  --light-color: #fefae0;
+  --white-color: #fff;
+  --black-color: #000;
+  --text-color: #333;
+
+  --orange-color: #e2852e;
+  --blue-color: #abe0f0;
+  --violet-color: #473472;
+  --red-color: #dc0000;
 
   /* Font */
   --body-font: "Montserrat", sans-serif;
+  --biggest-font-size: 2rem;
+  --big-font-size: 1.5rem;
   --normal-font-size: 1rem;
-  --small-font-size: 0.6rem;
+  --small-font-size: 0.85rem;
+
+  /* Font weight */
+  --font-regular: 400;
+  --font-semi-bold: 600;
+  --font-bold: 700;
 }
 
 * {
@@ -25,5 +39,99 @@
 }
 
 body {
-  background: var(--body-color);
+  background: var(--bg-color);
+}
+
+/* Responsivness */
+@media screen and(min-width: 1150px) {
+  :root {
+    --biggest-font-size: 2rem;
+    --big-font-size: 2.5rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+  }
+}
+
+.container {
+  max-width: 1150px;
+  min-height: 100vh;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.btn {
+  padding: 0.75rem 2.75rem;
+  border-radius: 0.25rem;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+  background: var(--dark-color);
+  color: var(--white-color);
+  font-weight: var(--font-bold);
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.btn:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  rotate: -2deg;
+  letter-spacing: 0.5px;
+}
+
+.card {
+  max-width: 350px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: radial-gradient(
+    circle at 50% 0%,
+    var(--primary-color) 36%,
+    var(--white-color) 36%
+  );
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+
+  img {
+    max-width: 225px;
+    display: block;
+  }
+
+  .hp {
+    position: absolute;
+    right: 1.25rem;
+    top: 1.5rem;
+    padding: 0.5rem 1.25rem;
+    background: var(--white-color);
+    font-size: var(--small-font-size);
+    border-radius: 0.25rem;
+  }
+
+  .pokemon_name {
+    font-weight: var(--font-bold);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .types {
+    margin: 1.75rem 0rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .stats {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+    text-align: center;
+
+    p {
+      color: var(--dark-color);
+    }
+  }
 }
