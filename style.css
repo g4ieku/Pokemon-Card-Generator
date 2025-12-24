@@ -1,0 +1,29 @@
+/* Variables */
+:root {
+  /* Colors */
+  --first-color: #91c6bc;
+  --title-color: #4b9da9;
+  --txt-color: #000;
+  --body-color: #ebd5ab;
+  --container-color: #f6f3c2;
+
+  /* Font */
+  --body-font: "Montserrat", sans-serif;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.6rem;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: var(--body-font);
+  outline: none;
+  border: none;
+  text-decoration: none;
+  transition: all 0.2s linear;
+}
+
+body {
+  background: var(--body-color);
+}
