@@ -98,6 +98,7 @@ body {
 
   img {
     max-width: 225px;
+    height: 255px;
     display: block;
   }
 
@@ -109,6 +110,11 @@ body {
     background: var(--white-color);
     font-size: var(--small-font-size);
     border-radius: 0.25rem;
+
+    span {
+      font-size: 10px;
+      font-weight: var(--font-bold);
+    }
   }
 
   .pokemon_name {
@@ -120,8 +126,14 @@ body {
   .types {
     margin: 1.75rem 0rem;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     gap: 1rem;
+
+    span {
+      background: var(--light-color);
+      padding: 0.25rem 0.5rem;
+    }
   }
 
   .stats {
